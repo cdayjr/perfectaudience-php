@@ -15,7 +15,7 @@ require '/src/Prad/autoload.php'
 Once built in autoloader has been required, you can begin using the SDK.
 ```php
 use Prad\PerfectAudience;
-$pa = new PerfectAudience('user_id', 'user_pwd);
+$pa = new PerfectAudience('user_id', 'user_pwd');
 
 $status = $pa->getReportstatus('campaign_report');
 ```
