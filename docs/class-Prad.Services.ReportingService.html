@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Prad\Services\ReportingService</title>
+
+	<script type="text/javascript" src="resources/combined.js?1748829536"></script>
+	<script type="text/javascript" src="elementlist.js?2047793208"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li class="active"><a href="namespace-Prad.html">Prad<span></span></a>
+						<ul>
+				<li><a href="namespace-Prad.Auth.html">Auth</a>
+						</li>
+				<li><a href="namespace-Prad.Exceptions.html">Exceptions</a>
+						</li>
+				<li class="active"><a href="namespace-Prad.Services.html">Services</a>
+						</li>
+				<li><a href="namespace-Prad.Util.html">Util</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Prad.Services.BaseService.html">BaseService</a></li>
+				<li class="active"><a href="class-Prad.Services.ReportingService.html">ReportingService</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Prad.Services.html" title="Summary of Prad\Services"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class ReportingService</h1>
+
+
+	<div class="description">
+	
+<p>Performs all actions pertaining to reporting the Perfect Audience.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-Prad.Services.BaseService.html"><span>Prad\Services\BaseService</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>Prad\Services\ReportingService</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Prad.html">Prad</a>\<a href="namespace-Prad.Services.html">Services</a><br />
+		<b>Package:</b> Services<br />
+
+				<b>Author:</b>
+				Baptiste Pernet<br />
+		<b>Located at</b> <a href="source-class-Prad.Services.ReportingService.html#6-44" title="Go to source code">Prad/Services/ReportingService.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="getStatus" id="_getStatus">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getStatus">#</a>
+		<code><a href="source-class-Prad.Services.ReportingService.html#14-28" title="Go to source code">getStatus</a>( <span>mixed <var>$dataType</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Get the status of the reporting. Use the data status service to check when
+new performance data is available.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the status of the reporting. Use the data status service to check when
+new performance data is available.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>- The UTC timestamp at which the data source was last updated.<br />
+				</div>
+
+
+				<h4>Params</h4>
+				<div class="list">
+						string $dataType - type of report we get the date: campaign_report, ad_report,
+conversion_report<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getCampaignReport" id="_getCampaignReport">
+
+		<td class="attributes"><code>
+			 public 
+			the
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getCampaignReport">#</a>
+		<code><a href="source-class-Prad.Services.ReportingService.html#30-43" title="Go to source code">getCampaignReport</a>( <span>array <var>$params</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>It returns useful performance statistics over a given time interval,
+separated by campaign.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>It returns useful performance statistics over a given time interval,
+separated by campaign.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>the</code><br>response object.<br />
+				</div>
+
+
+				<h4>Params</h4>
+				<div class="list">
+						array $params - parameters of the query.<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Prad.Services.BaseService.html#methods">Prad\Services\BaseService</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Prad.Services.BaseService.html#___construct">__construct()</a>, 
+			<a href="class-Prad.Services.BaseService.html#_buildUrl">buildUrl()</a>, 
+			<a href="class-Prad.Services.BaseService.html#_getHeaders">getHeaders()</a>, 
+			<a href="class-Prad.Services.BaseService.html#_getRestClient">getRestClient()</a>, 
+			<a href="class-Prad.Services.BaseService.html#_setRestClient">setRestClient()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Prad.Services.BaseService.html#properties">Prad\Services\BaseService</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Prad.Services.BaseService.html#$auth"><var>$auth</var></a>, 
+			<a href="class-Prad.Services.BaseService.html#$restClient"><var>$restClient</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
