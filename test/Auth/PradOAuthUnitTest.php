@@ -2,7 +2,6 @@
 
 use Prad\Auth\PradOAuth;
 use Prad\Util\CurlResponse;
-use Prad\Util\Config;
 
 class PradOAuth2UnitTest extends PHPUnit_Framework_TestCase {
 

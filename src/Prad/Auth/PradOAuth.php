@@ -11,7 +11,7 @@ use Prad\Exceptions\OAuthException;
  * @package Auth
  * @author  Baptiste Pernet
  */
-class PradOAuth {
+class PradOAuth implements PradOAuthInterface {
 
 	/**
 	 * @var string $clientId the Perfect Audience user.

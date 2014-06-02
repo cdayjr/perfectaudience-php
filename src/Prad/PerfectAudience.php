@@ -42,4 +42,13 @@ class PerfectAudience {
 	public function getDataStatus($dataType) {
 		return $this->reportingService->getStatus($dataType);
 	}
+
+	/**
+	 * It returns useful performance statistics over a given time interval, separated by campaign.
+	 * @params array $params - parameters of the query.
+	 * @return the response object.
+	 */
+	public function getCampaignReport(array $params) {
+		return $this->reportingService->getCampaignReport($params);
+	}
 }

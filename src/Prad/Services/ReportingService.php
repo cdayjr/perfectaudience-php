@@ -20,9 +20,25 @@ class ReportingService extends BaseService {
 	public function getStatus($dataType) {
 		$baseUrl = Config::get('endpoints.base_url') . Config::get('endpoints.report.status');
 		$url = $this->buildUrl($baseUrl, array('data_type' => $dataType));
-		$response = $this->getRestClient()->get($url, $this->getHeaders());
-		$jsonResponse = json_decode($response->body, true);
 
-		return $jsonResponse['data_status']['last_updated'];
+		$response = $this->getRestClient()->get($url, $this->getHeaders());
+		$jsonResponse = json_decode($response->body);
+
+		return $jsonResponse->data_status->last_updated;
+	}
+
+	/**
+	 * It returns useful performance statistics over a given time interval, separated by campaign.
+	 * @params array $params - parameters of the query.
+	 * @return the response object.
+	 */
+	public function getCampaignReport(array $params = null) {
+		$baseUrl = Config::get('endpoints.base_url') . Config::get('endpoints.report.status');
+		$url = $this->buildUrl($baseUrl, $params);
+
+		$response = $this->getRestClient()->get($url, $this->getHeaders());
+		$jsonResponse = json_decode($response->body);
+
+		return $jsonResponse->report;
 	}
 }
