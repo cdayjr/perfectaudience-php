@@ -13,7 +13,9 @@ class SessionDataStore implements PradDataStore {
 	 * Start the session and initialize the datastore in the the session.
 	 */
 	public function __construct() {
-		session_start();
+		if(session_id() == '') {
+			session_start();
+		}
 
 		if (!isset($_SESSION['prad_datastore'])) {
 			$_SESSION['prad_datastore'] = array();

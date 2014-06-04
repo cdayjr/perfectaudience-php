@@ -33,12 +33,49 @@ class ReportingService extends BaseService {
 	 * @return the response object.
 	 */
 	public function getCampaignReport(array $params = null) {
-		$baseUrl = Config::get('endpoints.base_url') . Config::get('endpoints.report.status');
+		$baseUrl = Config::get('endpoints.base_url') . Config::get('endpoints.report.campaign');
 		$url = $this->buildUrl($baseUrl, $params);
 
 		$response = $this->getRestClient()->get($url, $this->getHeaders());
 		$jsonResponse = json_decode($response->body);
 
 		return $jsonResponse->report;
+	}
+
+	/**
+	 * Returns metadata for a campaign within an account
+	 * @param string $id - campaign id.
+	 */
+	public function getCampaign($id) {
+		// Build the url.
+		$url = Config::get('endpoints.base_url') . Config::get('endpoints.campaign');
+		$url .= "/$id";
+
+		// Make the request and json decode.
+		$response = $this->getRestClient()->get($url, $this->getHeaders());
+		$jsonResponse = json_decode($response->body);
+
+		// Return the object.
+		return $jsonResponse->campaign;
+	}
+
+	/**
+	 * Returns metadata for campaigns within an account
+	 * @param string $siteId - Restricts the results to campaigns underneath the site with the given ID.
+	 * Site IDs may be retrieved from the /sites endpoint.
+	 */
+	public function getCampaigns($siteId = null) {
+		// Build the url.
+		$url = Config::get('endpoints.base_url') . Config::get('endpoints.campaign');
+		if (!is_null($siteId)) {
+			$url = $this->buildUrl($url, array('site_id' => $siteId));
+		}
+
+		// Make the request.
+		$response = $this->getRestClient()->get($url, $this->getHeaders());
+		$jsonResponse = json_decode($response->body);
+
+		// Return the list of campaigns.
+		return $jsonResponse->campaigns;
 	}
 }

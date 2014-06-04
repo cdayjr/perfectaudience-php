@@ -48,7 +48,15 @@ class PerfectAudience {
 	 * @params array $params - parameters of the query.
 	 * @return the response object.
 	 */
-	public function getCampaignReport(array $params) {
+	public function getCampaignReport(array $params = null) {
 		return $this->reportingService->getCampaignReport($params);
+	}
+
+	public function getCampaign($id) {
+		return $this->reportingService->getCampaign($id);
+	}
+
+	public function getCampaigns($siteId = null) {
+		return $this->reportingService->getCampaigns($siteId);
 	}
 }

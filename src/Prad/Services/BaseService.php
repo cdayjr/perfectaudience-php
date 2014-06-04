@@ -43,11 +43,10 @@ abstract class BaseService
 	 * @return string
 	 */
 	public function buildUrl($url, array $queryParams = null) {
-		$keyArr = array('api_key' => $this->apiKey);
 		if ($queryParams) {
-			$params = array_merge($keyArr, $queryParams);
+			$params = $queryParams;
 		} else {
-			$params = $keyArr;
+			$params = array();
 		}
 
 		return $url . '?' . http_build_query($params, '', '&');

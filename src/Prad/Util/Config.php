@@ -18,12 +18,13 @@ class Config {
 		 * REST endpoints
 		 */
 		'endpoints' => array(
-
 			'base_url' => 'https://api.perfectaudience.com/',
 			'auth' => 'auth',
 			'report' => array(
-				'status' => 'data_status'
-			)
+				'status' => 'data_status',
+				'campaign' => 'reports/campaign_report',
+			),
+			'campaign' => '/campaigns',
 		),
 
 		/**

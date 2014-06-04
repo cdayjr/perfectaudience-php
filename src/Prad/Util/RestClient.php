@@ -84,10 +84,10 @@ class RestClient implements RestClientInterface {
 
 		// check if any errors were returned
 		$body = json_decode($response->body, true);
-		if (array_key_exists('error_code', $body)) {
+		if (is_null($body) || array_key_exists('error_code', $body)) {
 			$ex = new PradException($response->body);
 			$ex->setCurlInfo($response->info);
-			$ex->setErrors($body);
+			$ex->setErrors(is_null($body) ? array('No Response') : $body);
 			throw $ex;
 		}
 
