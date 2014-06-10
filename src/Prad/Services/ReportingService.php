@@ -43,6 +43,36 @@ class ReportingService extends BaseService {
 	}
 
 	/**
+	 * It returns useful performance statistics over a given time interval, separated by ad.
+	 * @param array $params - parameters of the query
+	 * @return the response object.
+	 */
+	public function getAdReport(array $params = null) {
+		$baseUrl = Config::get('endpoints.base_url') . Config::get('endpoints.report.ad');
+		$url = $this->buildUrl($baseUrl, $params);
+
+		$response = $this->getRestClient()->get($url, $this->getHeaders());
+		$jsonResponse = json_decode($response->body);
+
+		return $jsonResponse->report;
+	}
+
+	/**
+	 * It returns segment size data for each of your available segments.
+	 * @param array $params - parameters of the query
+	 * @return the response object.
+	 */
+	public function getSegmentReport(array $params = null) {
+		$baseUrl = Config::get('endpoints.base_url') . Config::get('endpoints.report.segment');
+		$url = $this->buildUrl($baseUrl, $params);
+
+		$response = $this->getRestClient()->get($url, $this->getHeaders());
+		$jsonResponse = json_decode($response->body);
+
+		return $jsonResponse->report;
+	}
+
+	/**
 	 * Returns metadata for a campaign within an account
 	 * @param string $id - campaign id.
 	 */
@@ -56,7 +86,7 @@ class ReportingService extends BaseService {
 		$jsonResponse = json_decode($response->body);
 
 		// Return the object.
-		return $jsonResponse->campaign;
+		return $jsonResponse->campaign[0];
 	}
 
 	/**
@@ -77,5 +107,42 @@ class ReportingService extends BaseService {
 
 		// Return the list of campaigns.
 		return $jsonResponse->campaigns;
+	}
+
+	/**
+	 * Get all the ads. Can be restricted to a site id.
+	 * @param string $siteId - to get ads only for one site.
+	 * @return the list of ads.
+	 */
+	public function getAds($siteId = null) {
+		$url = Config::get('endpoints.base_url') . Config::get('endpoints.ad');
+		if (!is_null($siteId)) {
+			$url = $this->buildUrl($url, array('site_id' => $siteId));
+		}
+
+		// Make the request.
+		$response = $this->getRestClient()->get($url, $this->getHeaders());
+		$jsonResponse = json_decode($response->body);
+
+		// Return the list of campaigns.
+		return $jsonResponse->ads;
+	}
+
+	/**
+	 * It returns metadata for segments (retargeting lists) within an account
+	 * @param string $siteId - Restricts the results to segments underneath the site with the given id.
+	 */
+	public function getSegments($siteId = null) {
+		$url = Config::get('endpoints.base_url') . Config::get('endpoints.segment');
+		if (!is_null($siteId)) {
+			$url = $this->buildUrl($url, array('site_id' => $siteId));
+		}
+
+		// Make the request.
+		$response = $this->getRestClient()->get($url, $this->getHeaders());
+		$jsonResponse = json_decode($response->body);
+
+		// Return the list of campaigns.
+		return $jsonResponse->segments;
 	}
 }

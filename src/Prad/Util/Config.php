@@ -23,8 +23,12 @@ class Config {
 			'report' => array(
 				'status' => 'data_status',
 				'campaign' => 'reports/campaign_report',
+				'ad' => 'reports/ad_report',
+				'segment' => 'reports/segment_size_report',
 			),
 			'campaign' => '/campaigns',
+			'segment' => '/segments',
+			'ad' => 'ads',
 		),
 
 		/**

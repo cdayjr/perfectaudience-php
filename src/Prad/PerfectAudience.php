@@ -52,11 +52,55 @@ class PerfectAudience {
 		return $this->reportingService->getCampaignReport($params);
 	}
 
+	/**
+	 * It returns useful performance statistics over a given time interval, separated by ad.
+	 * @param array $params - parameters of the query
+	 * @return the response object.
+	 */
+	public function getAdReport(array $params = null) {
+		return $this->reportingService->getAdReport($params);
+	}
+
+	/**
+	 * It returns segment size data for each of your available segments.
+	 * @param array $params - parameters of the query
+	 * @return the response object.
+	 */
+	public function getSegmentReport(array $params = null) {
+		return $this->reportingService->getSegmentReport($params);
+	}
+
+	/**
+	 * Returns metadata for a campaign within an account
+	 * @param string $id - campaign id.
+	 */
 	public function getCampaign($id) {
 		return $this->reportingService->getCampaign($id);
 	}
 
+	/**
+	 * Returns metadata for campaigns within an account
+	 * @param string $siteId - Restricts the results to campaigns underneath the site with the given ID.
+	 * Site IDs may be retrieved from the /sites endpoint.
+	 */
 	public function getCampaigns($siteId = null) {
 		return $this->reportingService->getCampaigns($siteId);
+	}
+
+	/**
+	 * Get all the ads. Can be restricted to a site id.
+	 * @param string $siteId - to get ads only for one site.
+	 * @return the list of ads.
+	 */
+	public function getAds($siteId = null) {
+		return $this->reportingService->getCampaigns($siteId);
+	}
+
+	/**
+	 * It returns metadata for segments (retargeting lists) within an account
+	 * @param string $siteId - Restricts the results to segments underneath the site with the given id.
+	 */
+	public function getSegments($siteId = null) {
+		return $this->reportingService->getSegments($siteId);
 	}
 }
