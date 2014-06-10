@@ -93,7 +93,7 @@ class PerfectAudience {
 	 * @return the list of ads.
 	 */
 	public function getAds($siteId = null) {
-		return $this->reportingService->getCampaigns($siteId);
+		return $this->reportingService->getAds($siteId);
 	}
 
 	/**
