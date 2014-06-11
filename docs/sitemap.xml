@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/index.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/namespace-PHP.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/namespace-Prad.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/namespace-Prad.Auth.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/namespace-Prad.Exceptions.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/namespace-Prad.Services.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/namespace-Prad.Util.html</loc>
+</url>
+
+
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Auth.PradOAuth.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Auth.SessionDataStore.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.PerfectAudience.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Services.BaseService.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Services.ReportingService.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.SplClassLoader.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Util.Config.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Util.CurlResponse.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Util.RestClient.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Auth.PradDataStore.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Auth.PradOAuthInterface.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Util.RestClientInterface.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Exception.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Exceptions.IllegalArgumentException.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Exceptions.OAuthException.html</loc>
+</url>
+<url>
+	<loc>http://sp4ce.github.io/perfectaudience-php/docs/class-Prad.Exceptions.PradException.html</loc>
+</url>
+</urlset>

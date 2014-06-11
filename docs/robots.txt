@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://sp4ce.github.io/perfectaudience-php/docs/sitemap.xml

@@ -995,7 +995,6 @@ jQuery.fn.sortElements = (function(){
 $(function() {
 	var $document = $(document);
 	var $navigation = $('#navigation');
-	var navigationHeight = $('#navigation').height();
 	var $left = $('#left');
 	var $right = $('#right');
 	var $rightInner = $('#rightInner');
@@ -1141,7 +1140,7 @@ $(function() {
 	}
 	function setNavigationPosition()
 	{
-		var height = $(window).height() - navigationHeight;
+		var height = $(window).height() - $navigation.height();
 		$left.height(height);
 		$splitter.height(height);
 		$right.height(height);
