@@ -1,0 +1,15 @@
+{
+  "name": "prad/perfectaudience-php",
+  "description": "PHP SDK for the Perfect Audience API",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Baptiste Pernet",
+      "homepage": "https://github.com/sp4ce"
+    }
+  ],
+    "type": "library",
+    "require": {
+      "php": ">=5.3"
+    }
+}

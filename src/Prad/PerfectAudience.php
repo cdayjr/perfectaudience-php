@@ -103,4 +103,21 @@ class PerfectAudience {
 	public function getSegments($siteId = null) {
 		return $this->reportingService->getSegments($siteId);
 	}
+
+	/**
+	 * Returns metadata for sites within an account
+	 */
+	public function getSites() {
+		return $this->reportingService->getSites();
+	}
+
+	/**
+	 * Returns metadata for conversions within an account
+	 * @param string $siteId - Restricts the results to conversions underneath the site with the given ID.
+	 * Site IDs may be retrieved from the /sites endpoint.
+	 */
+	public function getConversions($siteId = null) {
+		return $this->reportingService->getConversions($siteId);
+	}
+
 }

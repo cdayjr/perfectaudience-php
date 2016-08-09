@@ -17,7 +17,7 @@ Once built in autoloader has been required, you can begin using the SDK.
 use Prad\PerfectAudience;
 $pa = new PerfectAudience('user_id', 'user_pwd');
 
-$status = $pa->getReportstatus('campaign_report');
+$status = $pa->getDataStatus('campaign_report');
 ```
 ## Minimum Requirements
 Use of this library requires PHP 5.3+, and PHP cURL extension (http://php.net/manual/en/book.curl.php)

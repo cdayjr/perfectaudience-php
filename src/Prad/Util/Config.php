@@ -25,10 +25,13 @@ class Config {
 				'campaign' => 'reports/campaign_report',
 				'ad' => 'reports/ad_report',
 				'segment' => 'reports/segment_size_report',
+                'conversion' => 'reports/conversion_report',
 			),
-			'campaign' => '/campaigns',
-			'segment' => '/segments',
+			'campaign' => 'campaigns',
+			'segment' => 'segments',
 			'ad' => 'ads',
+            'site' => 'sites',
+            'conversion' => 'conversions',
 		),
 
 		/**

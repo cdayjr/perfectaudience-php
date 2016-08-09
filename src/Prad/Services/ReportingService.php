@@ -73,6 +73,22 @@ class ReportingService extends BaseService {
 	}
 
 	/**
+	 * Returns useful performance statistics over a given time interval, separated by conversion.
+	 * @param array $params - parameters of the query.
+	 * @return the response object.
+	 */
+	public function getConversionReport(array $params = null) {
+		$baseUrl = Config::get('endpoints.base_url') . Config::get('endpoints.report.conversion');
+		$url = $this->buildUrl($baseUrl, $params);
+
+		$response = $this->getRestClient()->get($url, $this->getHeaders());
+		$jsonResponse = json_decode($response->body);
+
+		return $jsonResponse->report;
+	}
+
+
+	/**
 	 * Returns metadata for a campaign within an account
 	 * @param string $id - campaign id.
 	 */
@@ -145,4 +161,41 @@ class ReportingService extends BaseService {
 		// Return the list of campaigns.
 		return $jsonResponse->segments;
 	}
+
+	/**
+	 * Returns metadata for sites within an account
+	 */
+	public function getSites() {
+		// Build the url.
+		$url = Config::get('endpoints.base_url') . Config::get('endpoints.site');
+
+		// Make the request.
+		$response = $this->getRestClient()->get($url, $this->getHeaders());
+		$jsonResponse = json_decode($response->body);
+
+		// Return the list of campaigns.
+		return $jsonResponse->sites;
+	}
+
+	/**
+	 * Returns metadata for conversions within an account
+	 * @param string $siteId - Restricts the results to conversions underneath the site with the given ID.
+	 * Site IDs may be retrieved from the /sites endpoint.
+	 */
+	public function getConversions($siteId = null) {
+		// Build the url.
+		$url = Config::get('endpoints.base_url') . Config::get('endpoints.conversion');
+		if (!is_null($siteId)) {
+			$url = $this->buildUrl($url, array('site_id' => $siteId));
+		}
+
+		// Make the request.
+		$response = $this->getRestClient()->get($url, $this->getHeaders());
+		$jsonResponse = json_decode($response->body);
+
+		// Return the list of campaigns.
+		return $jsonResponse->conversions;
+	}
+
+
 }
